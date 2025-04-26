@@ -1,0 +1,42 @@
+[gd_scene load_steps=28 format=3 uid="uid://d3rml8706nnbu"]
+
+[ext_resource type="Script" uid="uid://hmanr7vuub47" path="res://Main.cs" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://l1mbh1f1gwnt" path="res://Tiles/TilesManager.tscn" id="2_h2yge"]
+[ext_resource type="Resource" uid="uid://duhcds2op12o7" path="res://Tiles/TileTypeResources/A1.tres" id="3_lquwl"]
+[ext_resource type="PackedScene" uid="uid://dce4um1xr8sta" path="res://CursorController.tscn" id="4_1bvp3"]
+[ext_resource type="Resource" uid="uid://g0o1h535rg7d" path="res://Tiles/TileTypeResources/A2.tres" id="4_7mycd"]
+[ext_resource type="Resource" uid="uid://dbwwv75flx3p7" path="res://Tiles/TileTypeResources/A3.tres" id="5_a6jrf"]
+[ext_resource type="Resource" uid="uid://cibmk4psc86fq" path="res://Tiles/TileTypeResources/A4.tres" id="6_xuqvo"]
+[ext_resource type="Resource" uid="uid://c73druwq3ecyr" path="res://Tiles/TileTypeResources/A5.tres" id="7_qsp4k"]
+[ext_resource type="Resource" uid="uid://drdhgv1jmxic3" path="res://Tiles/TileTypeResources/B1.tres" id="8_kq58d"]
+[ext_resource type="Resource" uid="uid://bsy5fok35726s" path="res://Tiles/TileTypeResources/B2.tres" id="9_seu75"]
+[ext_resource type="Resource" uid="uid://bdd0c2l2u8m75" path="res://Tiles/TileTypeResources/B3.tres" id="10_htxhm"]
+[ext_resource type="Resource" uid="uid://dyef3kiisjde6" path="res://Tiles/TileTypeResources/B4.tres" id="11_jq2sk"]
+[ext_resource type="Resource" uid="uid://ct4ji24jryv2x" path="res://Tiles/TileTypeResources/B5.tres" id="12_4k2k6"]
+[ext_resource type="Resource" uid="uid://34463ofky8l3" path="res://Tiles/TileTypeResources/C1.tres" id="13_0rl1p"]
+[ext_resource type="Resource" uid="uid://dmkb2fd0gl4n4" path="res://Tiles/TileTypeResources/C2.tres" id="14_ok6jj"]
+[ext_resource type="Resource" uid="uid://chpyblxvgmsju" path="res://Tiles/TileTypeResources/C3.tres" id="15_facbu"]
+[ext_resource type="Resource" uid="uid://ccqmijdc7folq" path="res://Tiles/TileTypeResources/C4.tres" id="16_b1qrp"]
+[ext_resource type="Resource" uid="uid://c00pr6rmk8lj5" path="res://Tiles/TileTypeResources/C5.tres" id="17_come4"]
+[ext_resource type="Resource" uid="uid://c46bw5il2vln3" path="res://Tiles/TileTypeResources/D1.tres" id="18_h8e4i"]
+[ext_resource type="Resource" uid="uid://cdk8br1nylert" path="res://Tiles/TileTypeResources/D2.tres" id="19_4lmeg"]
+[ext_resource type="Resource" uid="uid://4egaso02fyya" path="res://Tiles/TileTypeResources/D3.tres" id="20_0cp0l"]
+[ext_resource type="Resource" uid="uid://cvq5y48ln54ij" path="res://Tiles/TileTypeResources/D4.tres" id="21_d2t1y"]
+[ext_resource type="Resource" uid="uid://btgfyp5fer7vp" path="res://Tiles/TileTypeResources/D5.tres" id="22_gngh3"]
+[ext_resource type="Resource" uid="uid://c4w0uqisuf20k" path="res://Tiles/TileTypeResources/E1.tres" id="23_0n3wm"]
+[ext_resource type="Resource" uid="uid://cu5uwa0t3ep2p" path="res://Tiles/TileTypeResources/E2.tres" id="24_qnost"]
+[ext_resource type="Resource" uid="uid://cfb8bae28qj7i" path="res://Tiles/TileTypeResources/E3.tres" id="25_wnkbs"]
+[ext_resource type="Resource" uid="uid://dpqp7v16f23sd" path="res://Tiles/TileTypeResources/E4.tres" id="26_f6a44"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_0xm2m")
+
+[node name="TilesManager" parent="." instance=ExtResource("2_h2yge")]
+unique_name_in_owner = true
+TileTypes = Array[Object]([ExtResource("3_lquwl"), ExtResource("4_7mycd"), ExtResource("5_a6jrf"), ExtResource("6_xuqvo"), ExtResource("7_qsp4k"), ExtResource("8_kq58d"), ExtResource("9_seu75"), ExtResource("10_htxhm"), ExtResource("11_jq2sk"), ExtResource("12_4k2k6"), ExtResource("13_0rl1p"), ExtResource("14_ok6jj"), ExtResource("15_facbu"), ExtResource("16_b1qrp"), ExtResource("17_come4"), ExtResource("18_h8e4i"), ExtResource("19_4lmeg"), ExtResource("20_0cp0l"), ExtResource("21_d2t1y"), ExtResource("22_gngh3"), ExtResource("23_0n3wm"), ExtResource("24_qnost"), ExtResource("25_wnkbs"), ExtResource("26_f6a44")])
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(576, 324)
+
+[node name="CursorController" parent="." instance=ExtResource("4_1bvp3")]
+position = Vector2(512, 256)

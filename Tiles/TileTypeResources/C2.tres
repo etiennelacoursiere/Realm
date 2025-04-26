@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="TileTypeResource" load_steps=3 format=3 uid="uid://dmkb2fd0gl4n4"]
+
+[ext_resource type="PackedScene" uid="uid://bmg4ryna1bem6" path="res://Tiles/TileScenes/C2.tscn" id="1_hkw5d"]
+[ext_resource type="Script" uid="uid://msjxllkra3lm" path="res://Tiles/TileTypeResource.cs" id="2_t882s"]
+
+[resource]
+script = ExtResource("2_t882s")
+Count = 3
+TileScene = ExtResource("1_hkw5d")
+metadata/_custom_type_script = "uid://msjxllkra3lm"

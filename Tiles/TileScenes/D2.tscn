@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0kt8bw00d1ab"]
+
+[ext_resource type="PackedScene" uid="uid://bsqqskrop4n2b" path="res://Tiles/TileScenes/Tile.tscn" id="1_lqah8"]
+
+[node name="Tile" instance=ExtResource("1_lqah8")]
+TopConnector = 2
+RightConnector = 2
+BottomConnector = 1
+LeftConnector = 2
+HasCoatOfArms = true
+TotalCount = 1
+
+[node name="Sprite2D" parent="." index="0"]
+region_rect = Rect2(128, 384, 128, 128)

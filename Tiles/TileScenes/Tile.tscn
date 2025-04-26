@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bsqqskrop4n2b"]
+
+[ext_resource type="Script" uid="uid://civfvl4k48yro" path="res://Tiles/Tile.cs" id="1_3102s"]
+[ext_resource type="Texture2D" uid="uid://d2t33xwumtk5p" path="res://assets/tiles.png" id="2_n744q"]
+
+[node name="Tile" type="Node2D" node_paths=PackedStringArray("MeeplesPositions")]
+script = ExtResource("1_3102s")
+MeeplesPositions = [NodePath("")]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_n744q")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 128, 128)

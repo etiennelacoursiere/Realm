@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://k460gvesiqhu"]
+
+[ext_resource type="PackedScene" uid="uid://bsqqskrop4n2b" path="res://Tiles/TileScenes/Tile.tscn" id="1_4pvu4"]
+
+[node name="Tile" node_paths=PackedStringArray("MeeplesPositions") instance=ExtResource("1_4pvu4")]
+TopConnector = 1
+RightConnector = 1
+BottomConnector = 1
+LeftConnector = 1
+IsMonastery = true
+TotalCount = 4
+MeeplesPositions = []
+
+[node name="Sprite2D" parent="." index="0"]
+region_rect = Rect2(128, 0, 128, 128)
