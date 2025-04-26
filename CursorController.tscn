@@ -1,12 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://dce4um1xr8sta"]
+[gd_scene load_steps=4 format=3 uid="uid://dce4um1xr8sta"]
 
 [ext_resource type="Script" uid="uid://bnccb0fqilnhl" path="res://CursorController.cs" id="1_pfnfe"]
 [ext_resource type="Texture2D" uid="uid://d2t33xwumtk5p" path="res://assets/tiles.png" id="2_2mgfr"]
+[ext_resource type="Texture2D" uid="uid://ck7rv13sa2aua" path="res://assets/cursor_select.png" id="3_ygpqi"]
 
 [node name="CursorController" type="Node2D"]
 script = ExtResource("1_pfnfe")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_2mgfr")
-centered = false
 region_enabled = true
+region_rect = Rect2(0, 0, 128, 128)
+
+[node name="CursorSelectSprite" type="Sprite2D" parent="."]
+texture = ExtResource("3_ygpqi")

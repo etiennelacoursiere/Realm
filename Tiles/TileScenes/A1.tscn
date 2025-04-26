@@ -2,9 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://bsqqskrop4n2b" path="res://Tiles/TileScenes/Tile.tscn" id="1_d5x4h"]
 
-[node name="Tile" instance=ExtResource("1_d5x4h")]
+[node name="Tile" node_paths=PackedStringArray("sprite2D") instance=ExtResource("1_d5x4h")]
 TopConnector = 1
 RightConnector = 1
 LeftConnector = 1
 IsMonastery = true
 TotalCount = 2
+sprite2D = NodePath("Sprite2D")
