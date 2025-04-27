@@ -5,6 +5,10 @@ namespace Game;
 
 public partial class CursorController : Node2D
 {
+    private readonly StringName ACTION_ROTATE_CW = "rotate_cw";
+    private readonly StringName ACTION_ROTATE_CCW = "rotate_ccw";
+    private readonly StringName ACTION_PLACE = "place";
+
     private TilesManager tilesManager;
     private Sprite2D cursorSprite;
     private Sprite2D cursorSelectSprite;
@@ -23,11 +27,27 @@ public partial class CursorController : Node2D
     public override void _Process(double delta)
     {
         ProcessInput();
+        UpdateCursorPositionWithMouse();
+    }
+
+    private void UpdateCursorPositionWithMouse()
+    {
+        Vector2 mousePosition = GetGlobalMousePosition();
+
+        float gridSize = tilesManager.TileSize;
+        Vector2 snappedPosition = new Vector2(
+            Mathf.Round(mousePosition.X / gridSize) * gridSize,
+            Mathf.Round(mousePosition.Y / gridSize) * gridSize
+        );
+
+        Position = snappedPosition;
+
+        UpdateCursorSelectValidState();
     }
 
     private void ProcessInput()
     {
-        if (Input.IsActionJustPressed("place"))
+        if (Input.IsActionJustPressed(ACTION_PLACE))
         {
             if (tilesManager.CanPlaceTile(Position, cursorSprite.Rotation))
             {
@@ -35,43 +55,17 @@ public partial class CursorController : Node2D
             }
         }
 
-        if (Input.IsActionJustPressed("move_up"))
+        if (Input.IsActionJustPressed(ACTION_ROTATE_CW))
         {
-            Vector2 newPosition = new Vector2(Position.X, Position.Y - tilesManager.TileSize);
-            Position = newPosition;
+            var rotation = (Mathf.RadToDeg(cursorSprite.Rotation) + 90) % 360;
+            cursorSprite.Rotation = Mathf.DegToRad(rotation);
             UpdateCursorSelectValidState();
         }
 
-        if (Input.IsActionJustPressed("move_down"))
+        if (Input.IsActionJustPressed(ACTION_ROTATE_CCW))
         {
-            Vector2 newPosition = new Vector2(Position.X, Position.Y + tilesManager.TileSize);
-            Position = newPosition;
-            UpdateCursorSelectValidState();
-        }
-
-        if (Input.IsActionJustPressed("move_left"))
-        {
-            Vector2 newPosition = new Vector2(Position.X - tilesManager.TileSize, Position.Y);
-            Position = newPosition;
-            UpdateCursorSelectValidState();
-        }
-
-        if (Input.IsActionJustPressed("move_right"))
-        {
-            Vector2 newPosition = new Vector2(Position.X + tilesManager.TileSize, Position.Y);
-            Position = newPosition;
-            UpdateCursorSelectValidState();
-        }
-
-        if (Input.IsActionJustPressed("rotate_cw"))
-        {
-            cursorSprite.Rotation = (cursorSprite.Rotation + Mathf.Pi / 2) % Mathf.Tau;
-            UpdateCursorSelectValidState();
-        }
-
-        if (Input.IsActionJustPressed("rotate_ccw"))
-        {
-            cursorSprite.Rotation = (cursorSprite.Rotation - Mathf.Pi / 2) % Mathf.Tau;
+            var rotation = (Mathf.RadToDeg(cursorSprite.Rotation) - 90) % 360;
+            cursorSprite.Rotation = Mathf.DegToRad(rotation);
             UpdateCursorSelectValidState();
         }
     }

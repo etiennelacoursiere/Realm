@@ -27,8 +27,8 @@
 [ext_resource type="Resource" uid="uid://cu5uwa0t3ep2p" path="res://Tiles/TileTypeResources/E2.tres" id="24_qnost"]
 [ext_resource type="Resource" uid="uid://cfb8bae28qj7i" path="res://Tiles/TileTypeResources/E3.tres" id="25_wnkbs"]
 [ext_resource type="Resource" uid="uid://dpqp7v16f23sd" path="res://Tiles/TileTypeResources/E4.tres" id="26_f6a44"]
+[ext_resource type="PackedScene" uid="uid://cfjnn7f0yhnds" path="res://GameCamera.tscn" id="27_qsp4k"]
 [ext_resource type="PackedScene" uid="uid://cvigdinu6nfyv" path="res://Tiles/TileScenes/StartingTIle.tscn" id="28_xuqvo"]
-[ext_resource type="Script" uid="uid://i2w3gh5merkj" path="res://CameraManager.cs" id="29_qsp4k"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_0xm2m")
@@ -38,10 +38,9 @@ unique_name_in_owner = true
 StartingTile = NodePath("../StartingTIle")
 TileTypes = Array[Object]([ExtResource("3_lquwl"), ExtResource("4_7mycd"), ExtResource("5_a6jrf"), ExtResource("6_xuqvo"), ExtResource("7_qsp4k"), ExtResource("8_kq58d"), ExtResource("9_seu75"), ExtResource("10_htxhm"), ExtResource("11_jq2sk"), ExtResource("12_4k2k6"), ExtResource("13_0rl1p"), ExtResource("14_ok6jj"), ExtResource("15_facbu"), ExtResource("16_b1qrp"), ExtResource("17_come4"), ExtResource("18_h8e4i"), ExtResource("19_4lmeg"), ExtResource("20_0cp0l"), ExtResource("21_d2t1y"), ExtResource("22_gngh3"), ExtResource("23_0n3wm"), ExtResource("24_qnost"), ExtResource("25_wnkbs"), ExtResource("26_f6a44")])
 
+[node name="GameCamera" parent="." instance=ExtResource("27_qsp4k")]
+
 [node name="StartingTIle" parent="." instance=ExtResource("28_xuqvo")]
 
 [node name="CursorController" parent="." instance=ExtResource("4_1bvp3")]
 position = Vector2(0, 128)
-
-[node name="Camera2D" type="Camera2D" parent="."]
-script = ExtResource("29_qsp4k")

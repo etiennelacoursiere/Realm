@@ -62,9 +62,9 @@ public partial class TilesManager : Node
         if (placedTiles.ContainsKey(abovePosition))
         {
             Tile aboveTile = placedTiles[abovePosition];
-            GD.Print("Above tile Bottom Connector: " + aboveTile.BottomConnector);
-            GD.Print("Above tile Rotation: " + aboveTile.Rotation);
-            GD.Print("Current tile Top Connector: " + currentTile.GetRotatedTopConnector(rotation));
+            // GD.Print("Above tile Bottom Connector: " + aboveTile.BottomConnector);
+            // GD.Print("Above tile Rotation: " + aboveTile.Rotation);
+            // GD.Print("Current tile Top Connector: " + currentTile.GetRotatedTopConnector(rotation));
             if (aboveTile.GetRotatedBottomConnector(aboveTile.Rotation) != currentTile.GetRotatedTopConnector(rotation)) return false;
         }
 
@@ -72,9 +72,9 @@ public partial class TilesManager : Node
         if (placedTiles.ContainsKey(rightPosition))
         {
             Tile rightTile = placedTiles[rightPosition];
-            GD.Print("Right tile Left Connector: " + rightTile.LeftConnector);
-            GD.Print("Right tile Rotation: " + rightTile.Rotation);
-            GD.Print("Current tile Right Connector: " + currentTile.GetRotatedRightConnector(rotation));
+            // GD.Print("Right tile Left Connector: " + rightTile.LeftConnector);
+            // GD.Print("Right tile Rotation: " + rightTile.Rotation);
+            // GD.Print("Current tile Right Connector: " + currentTile.GetRotatedRightConnector(rotation));
             if (rightTile.GetRotatedLeftConnector(rightTile.Rotation) != currentTile.GetRotatedRightConnector(rotation)) return false;
         }
 
@@ -82,9 +82,9 @@ public partial class TilesManager : Node
         if (placedTiles.ContainsKey(belowPosition))
         {
             Tile belowTile = placedTiles[belowPosition];
-            GD.Print("Below tile Top Connector: " + belowTile.TopConnector);
-            GD.Print("Below tile Rotation: " + belowTile.Rotation);
-            GD.Print("Current tile Bottom Connector: " + currentTile.GetRotatedBottomConnector(rotation));
+            // GD.Print("Below tile Top Connector: " + belowTile.TopConnector);
+            // GD.Print("Below tile Rotation: " + belowTile.Rotation);
+            // GD.Print("Current tile Bottom Connector: " + currentTile.GetRotatedBottomConnector(rotation));
             if (belowTile.GetRotatedTopConnector(belowTile.Rotation) != currentTile.GetRotatedBottomConnector(rotation)) return false;
         }
 
@@ -92,9 +92,9 @@ public partial class TilesManager : Node
         if (placedTiles.ContainsKey(leftPosition))
         {
             Tile leftTile = placedTiles[leftPosition];
-            GD.Print("Left tile Right Connector: " + leftTile.RightConnector);
-            GD.Print("Left tile Rotation: " + leftTile.Rotation);
-            GD.Print("Current tile Left Connector: " + currentTile.GetRotatedLeftConnector(rotation));
+            // GD.Print("Left tile Right Connector: " + leftTile.RightConnector);
+            // GD.Print("Left tile Rotation: " + leftTile.Rotation);
+            // GD.Print("Current tile Left Connector: " + currentTile.GetRotatedLeftConnector(rotation));
             if (leftTile.GetRotatedRightConnector(leftTile.Rotation) != currentTile.GetRotatedLeftConnector(rotation)) return false;
         }
 
