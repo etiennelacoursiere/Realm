@@ -7,8 +7,6 @@ TopConnector = 1
 RightConnector = 1
 BottomConnector = 1
 LeftConnector = 1
-IsMonastery = true
-TotalCount = 4
 MeeplesPositions = []
 
 [node name="Sprite2D" parent="." index="0"]

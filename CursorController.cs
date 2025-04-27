@@ -27,10 +27,9 @@ public partial class CursorController : Node2D
     public override void _Process(double delta)
     {
         ProcessInput();
-        UpdateCursorPositionWithMouse();
     }
 
-    private void UpdateCursorPositionWithMouse()
+    private void ProcessInput()
     {
         Vector2 mousePosition = GetGlobalMousePosition();
 
@@ -42,11 +41,6 @@ public partial class CursorController : Node2D
 
         Position = snappedPosition;
 
-        UpdateCursorSelectValidState();
-    }
-
-    private void ProcessInput()
-    {
         if (Input.IsActionJustPressed(ACTION_PLACE))
         {
             if (tilesManager.CanPlaceTile(Position, cursorSprite.Rotation))
@@ -59,15 +53,15 @@ public partial class CursorController : Node2D
         {
             var rotation = (Mathf.RadToDeg(cursorSprite.Rotation) + 90) % 360;
             cursorSprite.Rotation = Mathf.DegToRad(rotation);
-            UpdateCursorSelectValidState();
         }
 
         if (Input.IsActionJustPressed(ACTION_ROTATE_CCW))
         {
             var rotation = (Mathf.RadToDeg(cursorSprite.Rotation) - 90) % 360;
             cursorSprite.Rotation = Mathf.DegToRad(rotation);
-            UpdateCursorSelectValidState();
         }
+
+        UpdateCursorSelectValidState();
     }
 
     private void UpdateCursorSelectValidState()
